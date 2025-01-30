@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Key Solution</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .form-section {
+            padding: 30px;
+            flex: 1;
+        }
+        .logo-section {
+            background-color: #001f8d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+            flex: 1;
+        }
+        .logo-section img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #001f8d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0044cc;
+        }
+        .switch-form {
+            text-align: center;
+            margin-top: 10px;
+        }
+        a {
+            color: #0044cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-section" id="login-container">
+            <h2>Welcome to Safe Key Solution</h2>
+            <form id="login-form">
+                <label>Email:</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required />
+                <label>Password:</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required />
+                <button type="submit">Login</button>
+            </form>
+            <div class="switch-form">
+                Don't have an account? <a href="#" id="show-register">Register here</a>
+            </div>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-section" id="register-container" style="display:none;">
+            <h2>Register to Safe Key Solution</h2>
+            <form id="register-form">
+                <label>Name:</label>
+                <input type="text" id="register-name" placeholder="Enter your name" required />
+                <label>Email:</label>
+                <input type="email" id="register-email" placeholder="Enter your email" required />
+                <label>Password:</label>
+                <input type="password" id="register-password" placeholder="Enter your password" required />
+                <button type="submit">Register</button>
+            </form>
+            <div class="switch-form">
+                Already have an account? <a href="#" id="show-login">Login here</a>
+            </div>
+        </div>
+
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="https://raw.githubusercontent.com/SkLabib/Image/refs/heads/main/Safe%20Key%20Solutions.jpg" width="600px" height="200px">
+        </div>
+    </div>
+
+    <script>
+        // Switch between Login and Register forms
+        document.getElementById('show-register').addEventListener('click', () => {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('register-container').style.display = 'block';
+        });
+
+        document.getElementById('show-login').addEventListener('click', () => {
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        });
+
+        // Registration Functionality
+        document.getElementById('register-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('register-name').value.trim();
+            const email = document.getElementById('register-email').value.trim();
+            const password = document.getElementById('register-password').value.trim();
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check if email already exists
+            if (users.some(user => user.email === email)) {
+                alert('Email already exists! Please use a different email.');
+                return;
+            }
+
+            // Save user in localStorage
+            users.push({ name, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Registration successful! You can now log in.');
+
+            // Switch to Login form
+            document.getElementById('register-container').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        });
+
+        // Login Functionality
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Validate user credentials
+            const validUser = users.find(user => user.email === email && user.password === password);
+
+            if (validUser) {
+                alert(`Welcome, ${validUser.name}! Login successful.`);
+                window.location.href = 'index.html'; // Redirect to index.html
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

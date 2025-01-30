@@ -1,0 +1,28 @@
+        <!-- Modal for user input and payment -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h3>Complete Your Purchase</h3>
+                <form id="paymentForm">
+                    <label for="productName">Product:</label>
+                    <input type="text" id="productName" name="productName" readonly>
+
+                    <label for="price">Price (Tk):</label>
+                    <input type="text" id="price" name="price" readonly>
+
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your address" required></textarea>
+
+                    <button type="submit">Pay Now</button>
+                </form>
+            </div>
+        </div>

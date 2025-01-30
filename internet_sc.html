@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="antivirus.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-bar">
+            <p>Contact us: 📞 +880 1873829848 (10am - 7pm)</p>
+        </div>
+
+        <!-- Navigation bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Safe Key Solutions</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search for products...">
+                <button type="button">🔍</button>
+            </div>
+            
+        </nav>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="antivirus.html">Antivirus</a></li>
+                <li><a href="internet_sc.html">Internet Security</a></li>
+                <li><a href="total_sc.html">Total Security</a></li>
+                <li><a href="mobile_sc.html">Mobile Security</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content layout -->
+        <div class="content">
+            <div class="left-section">
+                <div class="vertical-menu">
+                <h4>All Antivirus Brands</h4>
+                <ul>
+                    <li><a href="page-1.html">Net Protector</a></li>
+                    <li><a href="page-2.html">Quick Heal</a></li>
+                    <li><a href="page-3.html">K7</a></li>
+                    <li><a href="page-4.html">Kaspersky</a></li>
+                    <li><a href="page-5.html">Eset Nod 32</a></li>
+                    <li><a href="page-6.html">McAfee</a></li>
+                    <li><a href="page-7.html">eScan</a></li>
+                </ul>
+            </div>
+            </div>
+
+        <main class="product-section">
+            <p style="font-size: 30px;"><b>Internet Security</b></p>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://netprotector.net/cdn/shop/files/InternetSecuirty.png?v=1727694181">
+                    <h2>Net Protector Internet Security 1 User - 1 Year</h2>
+                    <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                    <button
+                class="buy-button"
+                onclick="openPaymentForm('Net Protector Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                </div>
+                    <div class="product-card">
+                        <img src="https://5.imimg.com/data5/YX/JY/XG/SELLER-34463624/quick-heal-internet-security-1-user-3-year-instant-email-delivery-at-wholesale-price.jpg">
+                        <h2>Quick Heal Internet Security 1 User - 1 Year</h2>
+                        <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                        <button
+                class="buy-button"
+                onclick="openPaymentForm('Quick Heal Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                    </div>
+                        <div class="product-card">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2021/3/DD/DO/PJ/12089989/k7-internet-500x500.jpg">
+                            <h2>K7 Internet Security 1 User - 1 Year</h2>
+                            <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                            <button
+                class="buy-button"
+                onclick="openPaymentForm('K7 Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                        </div>
+                            <div class="product-card">
+                                <img src="https://cdn.bdstall.com/product-image/giant_246786.jpg">
+                                <h2>Kasperskey Internet Security 1 User - 1 Year</h2>
+                                <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                                <button
+                class="buy-button"
+                onclick="openPaymentForm('Kasperskey Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                            </div>
+                                <div class="product-card">
+                                    <img src="https://images.othoba.com/images/thumbs/0558258_eset-internet-security-1-user-1-year.jpeg" height="450px" width="450px">
+                                    <h2>Eset Nod 32 Internet Security 1 User - 1 Year</h2>
+                                    <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                                    <button
+                class="buy-button"
+                onclick="openPaymentForm('Eset Nod 32 Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                                </div>
+                                    <div class="product-card">
+                                        <img src="https://www.computervillage.com.bd/image/cache/catalog/McAfee/mcafee-internet-security-1-year-1-user-f-500x500.jpg">
+                                        <h2>McAfee Internet Security 1 User - 1 Year</h2>
+                                        <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                                        <button
+                class="buy-button"
+                onclick="openPaymentForm('McAfee Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                                    </div>
+                                        <div class="product-card">
+                                            <img src="https://escanav.com/en/images/internet-security-suite.png">
+                                            <h2>eScan Internet Security 1 User - 1 Year</h2>
+                                            <p>Only Tk.<span>399</span> <span class="old-price"><strike>Tk.999</strike></span></p>
+                                            <button
+                class="buy-button"
+                onclick="openPaymentForm('eScan Internet Security 1 User - 1 Year', 399)"
+              >
+                Buy Now
+              </button>
+                                        </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h4>Subscribe for Updates</h4>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+            <div class="info-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <p>📞 +880 1684397510</p>
+                <p>Address: 144/2/c, South Pirerbag, Dhaka</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Safe Key Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+    <dialog id="my_modal_2" class="max-w-lg p-4 rounded-md">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold text-center">Complete Your Purchase</h3>
+
+          <form
+            id="paymentForm"
+            method="dialog"
+            class="grid grid-cols-1 w-[400px]"
+            onsubmit="handleSubmit(event)"
+          >
+            <label for="productName" class="gap-2 py-2">Product:</label>
+            <input
+              type="text"
+              id="productName"
+              name="productName"
+              class="p-2 border rounded-md"
+              readonly
+            />
+
+            <label for="price" class="gap-2 py-2">Price (Tk):</label>
+            <input
+              type="text"
+              id="price"
+              name="price"
+              class="p-2 border rounded-md"
+              readonly
+            />
+
+            <label for="name" class="gap-2 py-2">Your Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="p-2 border rounded-md"
+              placeholder="Enter your full name"
+              required
+            />
+
+            <label for="email" class="gap-2 py-2">Your Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="p-2 border rounded-md"
+              placeholder="Enter your email"
+              required
+            />
+
+            <label for="phone" class="gap-2 py-2">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="p-2 border rounded-md"
+              placeholder="Enter your phone number"
+              required
+            />
+
+            <label for="address" class="gap-2 py-2">Address:</label>
+            <textarea
+              id="address"
+              name="address"
+              rows="4"
+              class="p-2 border rounded-md"
+              placeholder="Enter your address"
+              required
+            ></textarea>
+
+            <button
+              id="checkout"
+              type="submit"
+              class="bg-cyan-400 p-2 my-5 font-bold text-white rounded-lg"
+            >
+              Checkout
+            </button>
+          </form>
+
+          <form method="dialog" class="modal-backdrop w-full">
+            <button type="button" class="bg-red-500 text-white font-bold text-center p-2 rounded-lg w-full" onclick="closeModal()">Cancel</button>
+          </form>
+        </div>
+      </dialog>
+</div>
+<script type="module" src="openPaymentForm.js"></script>
+</body>
+</html>
